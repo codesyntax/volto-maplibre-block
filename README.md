@@ -6,6 +6,10 @@ Volto block and component to render maps using the [maplibre](https://github.com
 
 To do so we use the [react-map-gl](https://visgl.github.io/react-map-gl/docs) library, which supports both maplibre and [Mapblox GL](https://github.com/mapbox/mapbox-gl-js)
 
+I have heavily based this block on [volto-leaflet-block](https://github.com/adeweb-be/volto-leaflet-block).
+
+The point is that Leaflet has several issues with SSR and it is not ready to work on SSR and will not be ready to do so. So instead of doing ugly hacks, I have decided to create my own map block.
+
 ## Features
 
 - A generic Map component, that can be used in your Volto developments.
