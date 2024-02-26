@@ -2,6 +2,30 @@
 
 ## Introduction
 
+Volto block and component to render maps using the [maplibre](https://github.com/MapLibre/maplibre-gl-js) JS library, which is a fork of [Mapbox GL 1.x](https://github.com/mapbox/mapbox-gl-js).
+
+To do so we use the [react-map-gl](https://visgl.github.io/react-map-gl/docs) library, which supports both maplibre and [Mapblox GL](https://github.com/mapbox/mapbox-gl-js)
+
+## Features
+
+- A generic Map component, that can be used in your Volto developments.
+
+- A Map block, that allows some basic configuration (used tiles, map center, zoom, and a list of markers (title, link and icon))
+
+
+## Installation
+
+Add this package to your project's or addon's dependencies::
+
+```json
+  "dependencies": {
+    ...
+    "@codesyntax/volto-maplibre-block": "*"
+    ...
+  },
+
+```
+
 ## Development
 
 You can develop an add-on in isolation using the boilerplate already provided by the add-on generator.
