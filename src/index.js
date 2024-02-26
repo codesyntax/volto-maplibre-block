@@ -19,30 +19,54 @@ const applyConfig = (config) => {
       {
         id: 'osm',
         name: 'OpenStreetMap',
-        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        type: 'raster',
+        urls: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
         attribution:
-          '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+          '&copy; OpenStreetMap Contributors | Kartendarstellung &copy; OpenTopoMap (CC-BY-SA)',
+        maxzoom: 19,
       },
       {
         id: 'osmfr',
         name: 'OpenStreetMap-Fr',
-        url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+        type: 'raster',
+        urls: [
+          'https://a.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
+        ],
         attribution:
           'map data \u00a9 <a href="http://osm.org/copyright">OpenStreetMap</a> contributors under ODbL ',
+        tileSize: 256,
+        maxzoom: 19,
       },
       {
         id: 'osmde',
         name: 'OpenStreetMap-De',
-        url: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+        type: 'raster',
+        urls: ['https://tile.openstreetmap.de/tiles/{z}/{x}/{y}.png'],
         attribution:
           'map data \u00a9 <a href="http://osm.org/copyright">OpenStreetMap</a> contributors under ODbL ',
+        tileSize: 256,
+        maxzoom: 19,
       },
       {
         id: 'opentopomap',
         name: 'OSM OpenTopoMap',
-        url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+        type: 'raster',
+        urls: [
+          'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',
+          'https://b.tile.opentopomap.org/{z}/{x}/{y}.png',
+          'https://c.tile.opentopomap.org/{z}/{x}/{y}.png',
+        ],
         attribution:
           'Kartendaten: \u00a9 <a href="http://osm.org/copyright">OpenStreetMap</a> Mitwirkende, <a href="http://viewfinderpanoramas.org/">SRTM</a> | map style: \u00a9 <a href=""https://opentopomap.org/">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+        tileSize: 256,
+        maxzoom: 19,
       },
     ],
   };

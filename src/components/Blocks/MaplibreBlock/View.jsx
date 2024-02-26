@@ -10,11 +10,17 @@ export const BlockViewComponent = (props) => {
   };
 
   // filter out items without correct values
-  const markers = data.markers.filter(
-    (item) => item.latitude && item.longitude,
-  );
+  const markers =
+    data?.markers?.filter((item) => item.latitude && item.longitude) || [];
 
-  return <MapLibre markers={markers} center={center} height={data.height} />;
+  return (
+    <MapLibre
+      markers={markers}
+      center={center}
+      height={data.height}
+      tilesLayer={data.tilesLayer}
+    />
+  );
 };
 
 export const MaplibreBlockView = (props) => {

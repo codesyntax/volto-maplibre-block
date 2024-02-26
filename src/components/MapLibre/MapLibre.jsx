@@ -1,14 +1,11 @@
 import { useState } from 'react';
-
-import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 import { FullscreenControl, Marker, NavigationControl } from 'react-map-gl';
 import { Map, useMap, Popup, ScaleControl } from 'react-map-gl/maplibre';
-import { WebMercatorViewport } from 'viewport-mercator-project';
-
-import { mapStyle } from './utils';
 
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './style.css';
+import { basicOSMStyle } from './utils';
 
 export const FitBounds = (props) => {
   const { markers } = props;
@@ -34,9 +31,38 @@ export const MapLibre = (props) => {
       longitude: -2.4681,
       zoom: 12,
     },
+    tilesLayer,
     height = '500px',
     fitBounds = true,
   } = props;
+
+  const selectedMapStyles =
+    config.blocks.blocksConfig.mapLibreBlock.tileLayers.filter(
+      (item) => item.id === tilesLayer,
+    );
+  const selectedMapStyle = selectedMapStyles[0];
+
+  const mapStyle = selectedMapStyle
+    ? {
+        version: 8,
+        sources: {
+          [selectedMapStyle.id]: {
+            type: selectedMapStyle.type,
+            tiles: selectedMapStyle.urls,
+            tileSize: selectedMapStyle.tileSize,
+            attribution: selectedMapStyle.attribution,
+            maxzoom: selectedMapStyle.maxzoom,
+          },
+        },
+        layers: [
+          {
+            id: selectedMapStyle.id,
+            type: selectedMapStyle.type,
+            source: selectedMapStyle.id,
+          },
+        ],
+      }
+    : basicOSMStyle;
 
   const [popupInfo, setPopupInfo] = useState(
     markers.length > 0 ? null : marker,

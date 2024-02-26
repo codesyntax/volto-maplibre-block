@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-
+import config from '@plone/volto/registry';
 export const MaplibreMarkerSchema = (intl) => ({
   title: intl.formatMessage(messages.marker),
   fieldsets: [
@@ -58,7 +58,7 @@ export const MaplibreBlockSchema = (intl) => ({
     {
       id: 'style',
       title: intl.formatMessage(messages.style),
-      fields: ['height'],
+      fields: ['tilesLayer', 'height'],
     },
   ],
 
@@ -98,6 +98,15 @@ export const MaplibreBlockSchema = (intl) => ({
       description: intl.formatMessage(messages.fitBoundsDescription),
       type: 'boolean',
       default: true,
+    },
+    tilesLayer: {
+      title: intl.formatMessage(messages.tilesLayer),
+      choices: config.blocks.blocksConfig.mapLibreBlock.tileLayers.map(
+        (item) => {
+          return [item.id, item.name];
+        },
+      ),
+      initialValue: 'osm',
     },
   },
   required: [],
@@ -180,5 +189,9 @@ const messages = defineMessages({
     id: 'Select to automatically center the map according to the added markers.',
     defaultMessage:
       'Select to automatically center the map according to the added markers.',
+  },
+  tilesLayer: {
+    id: 'Tile style',
+    defaultMessage: 'Tile style',
   },
 });
