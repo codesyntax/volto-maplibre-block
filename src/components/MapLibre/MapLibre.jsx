@@ -7,15 +7,22 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import './style.css';
 import { basicOSMStyle } from './utils';
 import markerPNG from '../../icons/marker-icon.png';
+import { calcBoundsFromCoordinates } from './utils';
 
 export const FitBounds = (props) => {
   const { markers } = props;
   const map = useMap();
-  map.current.fitBounds(
+
+  const bounds = calcBoundsFromCoordinates(
     markers.map((marker) => [
       parseFloat(marker.longitude),
       parseFloat(marker.latitude),
     ]),
+  );
+
+  map.current.fitBounds(
+    bounds,
+
     {
       padding: { top: 50, bottom: 50, left: 50, right: 50 },
     },
