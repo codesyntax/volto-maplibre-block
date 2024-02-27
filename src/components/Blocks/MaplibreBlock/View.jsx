@@ -1,3 +1,5 @@
+import React from 'react';
+import config from '@plone/volto/registry';
 import { MapLibre } from '../../MapLibre';
 
 export const BlockViewComponent = (props) => {
@@ -10,7 +12,7 @@ export const BlockViewComponent = (props) => {
   };
 
   // filter out items without correct values
-  const markers =
+  let markers =
     data?.markers?.filter((item) => item.latitude && item.longitude) || [];
 
   return (

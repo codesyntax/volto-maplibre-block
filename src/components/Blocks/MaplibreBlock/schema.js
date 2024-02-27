@@ -6,7 +6,7 @@ export const MaplibreMarkerSchema = (intl) => ({
     {
       id: 'default',
       title: 'Default',
-      fields: ['title', 'latitude', 'longitude', 'anchor', 'icon'],
+      fields: ['title', 'latitude', 'longitude', 'anchor'],
     },
   ],
 
@@ -32,11 +32,6 @@ export const MaplibreMarkerSchema = (intl) => ({
         // ['left', intl.formatMessage(messages.left)],
         // ['right', intl.formatMessage(messages.right)],
       ],
-    },
-    icon: {
-      title: intl.formatMessage(messages.icon),
-      type: 'number',
-      widget: 'icon_select',
     },
   },
   required: [],
@@ -132,10 +127,6 @@ const messages = defineMessages({
   height: {
     id: 'Height',
     defaultMessage: 'Height',
-  },
-  icon: {
-    id: 'Icon',
-    defaultMessage: 'Icon',
   },
   title: {
     id: 'Title',

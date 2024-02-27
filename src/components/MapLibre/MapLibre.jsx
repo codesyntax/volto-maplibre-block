@@ -6,6 +6,7 @@ import { Map, useMap, Popup, ScaleControl } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './style.css';
 import { basicOSMStyle } from './utils';
+import markerPNG from '../../icons/marker-icon.png';
 
 export const FitBounds = (props) => {
   const { markers } = props;
@@ -88,7 +89,7 @@ export const MapLibre = (props) => {
                   setPopupInfo(item);
                 }}
               >
-                <img src="/marker-icon.png" alt={item.title} />
+                <img src={markerPNG} alt={item.title} />
               </Marker>
             );
           })}
@@ -103,7 +104,7 @@ export const MapLibre = (props) => {
               setPopupInfo(marker);
             }}
           >
-            <img src="/marker-icon.png" alt={marker.title} />
+            <img src={markerPNG} alt={marker.title} />
           </Marker>
         )}
 
