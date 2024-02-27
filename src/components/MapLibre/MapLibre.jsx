@@ -118,7 +118,7 @@ export const MapLibre = (props) => {
           </Popup>
         )}
 
-        {markers.length > 0 && fitBounds && <FitBounds markers={markers} />}
+        {markers.length > 1 && fitBounds && <FitBounds markers={markers} />}
       </Map>
     </div>
   );
