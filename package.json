@@ -23,12 +23,12 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "dependencies": {
-    "react-map-gl": "7.1.7",
-    "maplibre-gl": "4.0.2"
+    "maplibre-gl": "4.0.2",
+    "react-map-gl": "7.1.7"
   },
   "devDependencies": {
-    "@plone/scripts": "^3.0.0",
     "@babel/eslint-parser": "7.22.15",
+    "@plone/scripts": "^3.0.0",
     "eslint": "8.49.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-config-react-app": "7.0.1",
