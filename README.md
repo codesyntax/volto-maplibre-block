@@ -23,10 +23,38 @@ Add this package to your project's or addon's dependencies::
 
 ```json
   "dependencies": {
-    ...
     "@codesyntax/volto-maplibre-block": "*"
-    ...
   },
+
+```
+
+## Customization
+
+You can add extra map layers, or remove existing ones, tweaking the `tileLayers` property of the block:
+
+```js
+const applyConfig = (config) => {
+  // Own blocks
+  config.blocks.blocksConfig['mapLibreBlock']['tileLayers'] = [
+      {
+        id: 'osm',
+        name: 'OpenStreetMap',
+        type: 'raster',
+        urls: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+        attribution:
+          '&copy; OpenStreetMap Contributors | Kartendarstellung &copy; OpenTopoMap (CC-BY-SA)',
+        maxzoom: 19,
+      },
+    ]
+
+
+  return config;
+};
 
 ```
 
