@@ -23,6 +23,7 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "dependencies": {
+    "mapbox-gl": "3.2.0",
     "maplibre-gl": "4.0.2",
     "react-map-gl": "7.1.7"
   },

@@ -1,10 +1,9 @@
 import React from 'react';
-import config from '@plone/volto/registry';
 import { MapLibre } from '../../MapLibre';
+import { withBlockExtensions } from '@plone/volto/helpers';
 
-export const BlockViewComponent = (props) => {
-  const { data } = props;
-
+const MaplibreBlockView = (props) => {
+  const { data, className } = props;
   const center = {
     latitude: data?.latitude || '0.0',
     longitude: data?.longitude || '0.0',
@@ -16,17 +15,15 @@ export const BlockViewComponent = (props) => {
     data?.markers?.filter((item) => item.latitude && item.longitude) || [];
 
   return (
-    <MapLibre
-      markers={markers}
-      center={center}
-      height={data.height}
-      tilesLayer={data.tilesLayer}
-    />
+    <div className={className}>
+      <MapLibre
+        markers={markers}
+        center={center}
+        height={data.height}
+        tilesLayer={data.tilesLayer}
+      />
+    </div>
   );
 };
 
-export const MaplibreBlockView = (props) => {
-  const { data } = props;
-
-  return <BlockViewComponent data={data} />;
-};
+export default withBlockExtensions(MaplibreBlockView);

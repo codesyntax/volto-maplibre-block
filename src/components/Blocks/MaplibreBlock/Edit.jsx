@@ -3,7 +3,8 @@ import { useIntl } from 'react-intl';
 import { SidebarPortal, BlockDataForm } from '@plone/volto/components';
 
 import { MaplibreBlockSchema } from './schema';
-import { BlockViewComponent } from './View';
+import MaplibreBlockView from './View';
+
 export const MaplibreBlockEdit = (props) => {
   const { block, data, selected } = props;
   const handleChange = (id, value) => {
@@ -26,7 +27,7 @@ export const MaplibreBlockEdit = (props) => {
           onChangeField={handleChange}
         />
       </SidebarPortal>
-      <BlockViewComponent data={data} />
+      <MaplibreBlockView data={data} />
     </>
   );
 };
