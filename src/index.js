@@ -1,5 +1,5 @@
 import { MaplibreBlockEdit } from './components/Blocks/MaplibreBlock/Edit.jsx';
-import { MaplibreBlockView } from './components/Blocks/MaplibreBlock/View.jsx';
+import MaplibreBlockView from './components/Blocks/MaplibreBlock/View.jsx';
 import mapSVG from '@plone/volto/icons/map.svg';
 
 const applyConfig = (config) => {
