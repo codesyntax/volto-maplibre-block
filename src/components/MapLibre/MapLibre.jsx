@@ -96,7 +96,7 @@ export const MapLibre = (props) => {
                   setPopupInfo(item);
                 }}
               >
-                <img src={markerPNG} alt={item.title} />
+                <img src={item.marker || markerPNG} alt={item.title} />
               </Marker>
             );
           })}
@@ -111,7 +111,7 @@ export const MapLibre = (props) => {
               setPopupInfo(marker);
             }}
           >
-            <img src={markerPNG} alt={marker.title} />
+            <img src={marker.marker || markerPNG} alt={marker.title} />
           </Marker>
         )}
 
