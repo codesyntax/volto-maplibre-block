@@ -7,3 +7,10 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 1.1.0 (2024-03-19)
+
+### Feature
+
+- Add block extensions @erral [#1](https://github.com/voltomaplibre-block/pull/1)
+- Allow custom marker icons @erral [#2](https://github.com/voltomaplibre-block/pull/2)
