@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.2.0 (2024-03-20)
+
+### Feature
+
+- Add to common block group @erral [#2](https://github.com/voltomaplibre-block/pull/2)
+
 ## 1.1.0 (2024-03-19)
 
 ### Feature
