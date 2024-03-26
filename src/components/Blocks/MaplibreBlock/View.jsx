@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapLibre } from '../../MapLibre';
+import cx from 'classnames';
 import { withBlockExtensions } from '@plone/volto/helpers';
 
 const MaplibreBlockView = (props) => {
@@ -15,7 +16,7 @@ const MaplibreBlockView = (props) => {
     data?.markers?.filter((item) => item.latitude && item.longitude) || [];
 
   return (
-    <div className={className}>
+    <div className={cx('block maplibre', className)}>
       <MapLibre
         markers={markers}
         center={center}
