@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.3.0 (2024-03-26)
+
+### Feature
+
+- Add classes 'block' and 'maplibre' to the block @erral [#3](https://github.com/voltomaplibre-block/pull/3)
+
 ## 1.2.0 (2024-03-20)
 
 ### Feature
