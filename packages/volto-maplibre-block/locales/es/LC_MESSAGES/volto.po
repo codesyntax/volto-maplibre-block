@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-09 11:45-0400\n"
+"PO-Revision-Date: 2023-05-10 11:34-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language: es\n"
+"Language-Team: ES <LL@li.org>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Preferred-Encodings: utf-8\n"
+"MIME-Version: 1.0\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Domain: volto\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. Default: "Anchor"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Anchor"
+msgstr ""
+
+#. Default: "Bottom"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Bottom"
+msgstr ""
+
+#. Default: "Center map based on markers?"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Center map based on markers?"
+msgstr ""
+
+#. Default: "Content"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Content"
+msgstr ""
+
+#. Default: "Height"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Height"
+msgstr ""
+
+#. Default: "Latitude"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Latitude"
+msgstr ""
+
+#. Default: "Left"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Left"
+msgstr ""
+
+#. Default: "Longitude"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Longitude"
+msgstr ""
+
+#. Default: "Map"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Map"
+msgstr ""
+
+#. Default: "Marker"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Marker"
+msgstr ""
+
+#. Default: "Markers"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Markers"
+msgstr ""
+
+#. Default: "Right"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Right"
+msgstr ""
+
+#. Default: "Select to automatically center the map according to the added markers."
+#: components/Blocks/MaplibreBlock/schema
+msgid "Select to automatically center the map according to the added markers."
+msgstr ""
+
+#. Default: "Style"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Style"
+msgstr ""
+
+#. Default: "Tile style"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Tile style"
+msgstr ""
+
+#. Default: "Title"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Title"
+msgstr ""
+
+#. Default: "Top"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Top"
+msgstr ""
+
+#. Default: "Where to anchor the popup message in the marker"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Where to anchor the popup message in the marker"
+msgstr ""
+
+#. Default: "Zoom"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Zoom"
+msgstr ""

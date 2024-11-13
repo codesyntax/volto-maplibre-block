@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: de\n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Anchor"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Anchor"
+msgstr ""
+
+#. Default: "Bottom"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Bottom"
+msgstr ""
+
+#. Default: "Center map based on markers?"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Center map based on markers?"
+msgstr ""
+
+#. Default: "Content"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Content"
+msgstr ""
+
+#. Default: "Height"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Height"
+msgstr ""
+
+#. Default: "Latitude"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Latitude"
+msgstr ""
+
+#. Default: "Left"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Left"
+msgstr ""
+
+#. Default: "Longitude"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Longitude"
+msgstr ""
+
+#. Default: "Map"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Map"
+msgstr ""
+
+#. Default: "Marker"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Marker"
+msgstr ""
+
+#. Default: "Markers"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Markers"
+msgstr ""
+
+#. Default: "Right"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Right"
+msgstr ""
+
+#. Default: "Select to automatically center the map according to the added markers."
+#: components/Blocks/MaplibreBlock/schema
+msgid "Select to automatically center the map according to the added markers."
+msgstr ""
+
+#. Default: "Style"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Style"
+msgstr ""
+
+#. Default: "Tile style"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Tile style"
+msgstr ""
+
+#. Default: "Title"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Title"
+msgstr ""
+
+#. Default: "Top"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Top"
+msgstr ""
+
+#. Default: "Where to anchor the popup message in the marker"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Where to anchor the popup message in the marker"
+msgstr ""
+
+#. Default: "Zoom"
+#: components/Blocks/MaplibreBlock/schema
+msgid "Zoom"
+msgstr ""
