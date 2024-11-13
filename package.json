@@ -1,7 +1,7 @@
 {
   "name": "@codesyntax/volto-maplibre-block-dev",
-  "version": "1.0.0-alpha.0",
-  "description": "A new add-on for Volto",
+  "version": "2.0.0-alpha.0",
+  "description": "volto-maplibre-block: Volto add-on to use maplibre mapping library in Volto",
   "author": "Mikel Larreategi",
   "homepage": "https://github.com/codesyntax/volto-maplibre-block",
   "license": "MIT",
