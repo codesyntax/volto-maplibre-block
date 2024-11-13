@@ -7,9 +7,51 @@ A new add-on for Volto
 [![Code analysis checks](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/code.yml/badge.svg)](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/code.yml)
 [![Unit tests](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/unit.yml/badge.svg)](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/unit.yml)
 
+## Introduction
+
+Volto block and component to render maps using the [maplibre](https://github.com/MapLibre/maplibre-gl-js) JS library, which is a fork of [Mapbox GL 1.x](https://github.com/mapbox/mapbox-gl-js).
+
+To do so we use the [react-map-gl](https://visgl.github.io/react-map-gl/docs) library, which supports both maplibre and [Mapblox GL](https://github.com/mapbox/mapbox-gl-js)
+
+I have heavily based this block on [volto-leaflet-block](https://github.com/adeweb-be/volto-leaflet-block).
+
+The point is that Leaflet has several issues with SSR and it is not ready to work on SSR and will not be ready to do so. So instead of doing ugly hacks, I have decided to create my own map block.
+
 ## Features
 
-<!-- List your awesome features here -->
+- A generic Map component, that can be used in your Volto developments.
+
+- A Map block, that allows some basic configuration (used tiles, map center, zoom, and a list of markers (title, link and icon))
+
+## Customization
+
+You can add extra map layers, or remove existing ones, tweaking the `tileLayers` property of the block:
+
+```js
+const applyConfig = (config) => {
+  // Own blocks
+  config.blocks.blocksConfig['mapLibreBlock']['tileLayers'] = [
+      {
+        id: 'osm',
+        name: 'OpenStreetMap',
+        type: 'raster',
+        urls: [
+          'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ],
+        tileSize: 256,
+        attribution:
+          '&copy; OpenStreetMap Contributors | Kartendarstellung &copy; OpenTopoMap (CC-BY-SA)',
+        maxzoom: 19,
+      },
+    ]
+
+
+  return config;
+};
+
+```
 
 ## Installation
 
