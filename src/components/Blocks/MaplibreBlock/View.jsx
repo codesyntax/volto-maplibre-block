@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { withBlockExtensions } from '@plone/volto/helpers';
 
 const MaplibreBlockView = (props) => {
-  const { data, className } = props;
+  const { data, className, style } = props;
   const center = {
     latitude: data?.latitude || '0.0',
     longitude: data?.longitude || '0.0',
@@ -16,7 +16,7 @@ const MaplibreBlockView = (props) => {
     data?.markers?.filter((item) => item.latitude && item.longitude) || [];
 
   return (
-    <div className={cx('block maplibre', className)}>
+    <div className={cx('block maplibre', className)} style={style}>
       <MapLibre
         markers={markers}
         center={center}
