@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.1 (2024-12-05)
+
+## 2.0.0 (2024-12-05)
+
+### Feature
+
+- Update package for Volto 18 standards @erral [#4](https://github.com/codesyntax/volto-maplibre-block/issue/4)
+
 ## 1.3.0 (2024-03-26)
 
 ### Feature
