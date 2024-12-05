@@ -1,4 +1,11 @@
-# volto-maplibre-block
+# Volto Maplibre block (@codesyntax/volto-maplibre-block)
+
+A new add-on for Volto
+
+[![npm](https://img.shields.io/npm/v/@codesyntax/volto-maplibre-block)](https://www.npmjs.com/package/@codesyntax/volto-maplibre-block)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://codesyntax.github.io/volto-maplibre-block/)
+[![Code analysis checks](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/code.yml/badge.svg)](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/code.yml)
+[![Unit tests](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/unit.yml/badge.svg)](https://github.com/codesyntax/volto-maplibre-block/actions/workflows/unit.yml)
 
 ## Introduction
 
@@ -15,18 +22,6 @@ The point is that Leaflet has several issues with SSR and it is not ready to wor
 - A generic Map component, that can be used in your Volto developments.
 
 - A Map block, that allows some basic configuration (used tiles, map center, zoom, and a list of markers (title, link and icon))
-
-
-## Installation
-
-Add this package to your project's or addon's dependencies::
-
-```json
-  "dependencies": {
-    "@codesyntax/volto-maplibre-block": "*"
-  },
-
-```
 
 ## Customization
 
@@ -58,84 +53,146 @@ const applyConfig = (config) => {
 
 ```
 
+## Installation
+
+To install your project, you must choose the method appropriate to your version of Volto.
+
+
+### Volto 17 and earlier
+
+Create a new Volto project (you can skip this step if you already have one):
+
+```
+npm install -g yo @plone/generator-volto
+yo @plone/volto my-volto-project --addon @codesyntax/volto-maplibre-block
+cd my-volto-project
+```
+
+Add `@codesyntax/volto-maplibre-block` to your package.json:
+
+```JSON
+"addons": [
+    "@codesyntax/volto-maplibre-block"
+],
+
+"dependencies": {
+    "@codesyntax/volto-maplibre-block": "*"
+}
+```
+
+Download and install the new add-on by running:
+
+```
+yarn install
+```
+
+Start volto with:
+
+```
+yarn start
+```
+
+### Volto 18 and later
+
+Add `@codesyntax/volto-maplibre-block` to your `package.json`:
+
+```json
+"dependencies": {
+    "@codesyntax/volto-maplibre-block": "*"
+}
+```
+
+Add `@codesyntax/volto-maplibre-block` to your `volto.config.js`:
+
+```javascript
+const addons = ['@codesyntax/volto-maplibre-block'];
+```
+
+If this package provides a Volto theme, and you want to activate it, then add the following to your `volto.config.js`:
+
+```javascript
+const theme = '@codesyntax/volto-maplibre-block';
+```
+
+## Test installation
+
+Visit http://localhost:3000/ in a browser, login, and check the awesome new features.
+
+
 ## Development
 
-You can develop an add-on in isolation using the boilerplate already provided by the add-on generator.
-The project is configured to have the current add-on installed and ready to work with.
-This is useful to bootstrap an isolated environment that can be used to quickly develop the add-on or for demo purposes.
-It's also useful when testing an add-on in a CI environment.
+The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
+For this reason, it only works with pnpm and Volto 18 (currently in alpha).
 
-```{note}
-It's quite similar when you develop a Plone backend add-on in the Python side, and embed a ready to use Plone build (using buildout or pip) in order to develop and test the package.
+
+### Pre-requisites
+
+-   [Node.js](https://6.docs.plone.org/install/create-project.html#node-js)
+-   [Make](https://6.docs.plone.org/install/create-project.html#make)
+-   [Docker](https://6.docs.plone.org/install/create-project.html#docker)
+
+
+### Make convenience commands
+
+Run `make help` to list the available commands.
+
+```text
+help                             Show this help
+install                          Installs the add-on in a development environment
+start                            Starts Volto, allowing reloading of the add-on during development
+build                            Build a production bundle for distribution of the project with the add-on
+i18n                             Sync i18n
+ci-i18n                          Check if i18n is not synced
+format                           Format codebase
+lint                             Lint, or catch and remove problems, in code base
+release                          Release the add-on on npmjs.org
+release-dry-run                  Dry-run the release of the add-on on npmjs.org
+test                             Run unit tests
+ci-test                          Run unit tests in CI
+backend-docker-start             Starts a Docker-based backend for development
+storybook-start                  Start Storybook server on port 6006
+storybook-build                  Build Storybook
+acceptance-frontend-dev-start    Start acceptance frontend in development mode
+acceptance-frontend-prod-start   Start acceptance frontend in production mode
+acceptance-backend-start         Start backend acceptance server
+ci-acceptance-backend-start      Start backend acceptance server in headless mode for CI
+acceptance-test                  Start Cypress in interactive mode
+ci-acceptance-test               Run cypress tests in headless mode for CI
 ```
 
-The dockerized approach performs all these actions in a custom built docker environment:
+### Development environment set up
 
-1. Generates a vanilla project using the official Volto Yo Generator (@plone/generator-volto)
-2. Configures it to use the add-on with the name stated in the `package.json`
-3. Links the root of the add-on inside the created project
-
-After that you can use the inner dockerized project, and run any standard Volto command for linting, acceptance test or unit tests using Makefile commands provided for your convenience.
-
-### Setup the environment
-
-Run once
+Install package requirements.
 
 ```shell
-make dev
+make install
 ```
 
-which will build and launch the backend and frontend containers.
-There's no need to build them again after doing it the first time unless something has changed from the container setup.
+### Start developing
 
-In order to make the local IDE play well with this setup, is it required to run once `yarn` to install locally the required packages (ESlint, Prettier, Stylelint).
-
-Run
+Start the backend.
 
 ```shell
-yarn
+make backend-docker-start
 ```
 
-### Build the containers manually
-
-Run
+In a separate terminal session, start the frontend.
 
 ```shell
-make build-backend
-make build-addon
+make start
 ```
 
-### Run the containers
+### Lint code
 
-Run
-
-```shell
-make start-dev
-```
-
-This will start both the frontend and backend containers.
-
-### Stop Backend (Docker)
-
-After developing, in order to stop the running backend, don't forget to run:
-
-Run
-
-```shell
-make stop-backend
-```
-
-### Linting
-
-Run
+Run ESlint, Prettier, and Stylelint in analyze mode.
 
 ```shell
 make lint
 ```
 
-### Formatting
+### Format code
 
-Run
+Run ESlint, Prettier, and Stylelint in fix mode.
 
 ```shell
 make format
@@ -143,7 +200,7 @@ make format
 
 ### i18n
 
-Run
+Extract the i18n messages to locales.
 
 ```shell
 make i18n
@@ -151,56 +208,38 @@ make i18n
 
 ### Unit tests
 
-Run
+Run unit tests.
 
 ```shell
 make test
 ```
 
-### Acceptance tests
+### Run Cypress tests
 
-Run once
+Run each of these steps in separate terminal sessions.
 
-```shell
-make install-acceptance
-```
-
-For starting the servers
-
-Run
+In the first session, start the frontend in development mode.
 
 ```shell
-make start-test-acceptance-server
+make acceptance-frontend-dev-start
 ```
 
-The frontend is run in dev mode, so development while writing tests is possible.
-
-Run
+In the second session, start the backend acceptance server.
 
 ```shell
-make test-acceptance
+make acceptance-backend-start
 ```
 
-To run Cypress tests afterwards.
-
-When finished, don't forget to shutdown the backend server.
+In the third session, start the Cypress interactive test runner.
 
 ```shell
-make stop-test-acceptance-server
+make acceptance-test
 ```
 
-### Release
+## License
 
-Run
+The project is licensed under the MIT license.
 
-```shell
-make release
-```
+## Credits and Acknowledgements 🙏
 
-For releasing a RC version
-
-Run
-
-```shell
-make release-rc
-```
+Crafted with care by **Generated using [Cookieplone (0.7.1)](https://github.com/plone/cookieplone) and [cookiecutter-plone (92fee80)](https://github.com/plone/cookiecutter-plone/commit/92fee80e8c83fceacc79c729e5dddbe3ffaa502e) on 2024-11-13 19:09:33.938156**. A special thanks to all contributors and supporters!
